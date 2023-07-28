@@ -12,6 +12,7 @@ class ProductMapper implements EntityMapper<ProductDTO, Product> {
   @override
   Product toEntity(ProductDTO it) {
     return Product(
+      id: it.id,
       category: it.category != null ? _categoryMapper.toEntity(it.category!) : null,
       name: it.name,
       sku: it.sku,

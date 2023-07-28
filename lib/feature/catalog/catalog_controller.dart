@@ -21,6 +21,7 @@ abstract class CatalogControllerBase with Store {
       result = SuccessCatalogResult(catalog);
     } catch (e) {
       result = FailureCatalogResult();
+      rethrow;
     }
   }
 }
