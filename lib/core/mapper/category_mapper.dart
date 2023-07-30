@@ -7,6 +7,7 @@ class CategoryMapper implements EntityMapper<CategoryDTO, Category> {
   Category toEntity(CategoryDTO it) {
     return Category(
       name: it.name,
+      child: it.child != null ? toEntity(it.child!) : null,
     );
   }
 }
