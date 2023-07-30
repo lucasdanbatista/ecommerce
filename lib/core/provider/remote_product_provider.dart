@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:ecommerce/core/dto/catalog_dto.dart';
 import 'package:ecommerce/core/dto/product_dto.dart';
 import 'package:ecommerce/core/provider/product_provider.dart';
 import 'package:retrofit/retrofit.dart';
@@ -11,7 +12,7 @@ abstract class RemoteProductProvider implements ProductProvider {
 
   @GET('/v1/products')
   @override
-  Future<List<ProductDTO>> getCatalog();
+  Future<List<CatalogDTO>> getCatalogs();
 
   @GET('/v1/products/{id}')
   @override

@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:ecommerce/core/mapper/catalog_mapper.dart';
 import 'package:ecommerce/core/mapper/category_mapper.dart';
 import 'package:ecommerce/core/mapper/offer_mapper.dart';
 import 'package:ecommerce/core/mapper/product_mapper.dart';
@@ -25,9 +26,10 @@ class MainModule extends Module {
         Bind((i) => CategoryMapper()),
         Bind((i) => SellerMapper()),
         Bind((i) => OfferMapper()),
+        Bind((i) => CatalogMapper(i.get(), i.get())),
         Bind((i) => ProductMapper(i.get(), i.get(), i.get())),
         Bind((i) => RemoteProductProvider(i.get())),
-        Bind((i) => ProductRepositoryImpl(i.get(), i.get())),
+        Bind((i) => ProductRepositoryImpl(i.get(), i.get(), i.get())),
       ];
 
   @override
