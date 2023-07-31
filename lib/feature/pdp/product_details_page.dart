@@ -24,6 +24,7 @@ class ProductDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Detalhes do produto'),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () => throw UnimplementedError(),

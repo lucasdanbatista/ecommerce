@@ -19,6 +19,7 @@ class CatalogPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Catálogo'),
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () => throw UnimplementedError(),
