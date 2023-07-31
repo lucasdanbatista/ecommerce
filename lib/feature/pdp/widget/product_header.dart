@@ -3,10 +3,10 @@ import 'package:ecommerce/feature/pdp/widget/delivery_info.dart';
 import 'package:ecommerce/feature/pdp/widget/offers.dart';
 import 'package:flutter/material.dart';
 
-class Header extends StatelessWidget {
+class ProductHeader extends StatelessWidget {
   final Product product;
 
-  const Header(this.product, {super.key});
+  const ProductHeader(this.product, {super.key});
 
   @override
   Widget build(BuildContext context) {

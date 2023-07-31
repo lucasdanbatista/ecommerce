@@ -2,8 +2,8 @@ import 'package:ecommerce/core/entity/product.dart';
 import 'package:ecommerce/feature/pdp/product_details_controller.dart';
 import 'package:ecommerce/feature/pdp/product_details_result.dart';
 import 'package:ecommerce/feature/pdp/widget/categories_label.dart';
-import 'package:ecommerce/feature/pdp/widget/header.dart';
 import 'package:ecommerce/feature/pdp/widget/photo_slider.dart';
+import 'package:ecommerce/feature/pdp/widget/product_header.dart';
 import 'package:ecommerce/feature/pdp/widget/product_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -70,7 +70,7 @@ class ProductDetailsPage extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Header(product),
+          child: ProductHeader(product),
         ),
         ProductInfo(product),
       ],
