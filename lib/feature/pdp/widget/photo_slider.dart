@@ -12,6 +12,7 @@ class PhotoSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const borderRadius = BorderRadius.all(Radius.circular(16));
     return SizedBox.fromSize(
       size: size,
       child: PageView(
@@ -19,19 +20,26 @@ class PhotoSlider extends StatelessWidget {
         children: List.generate(
           photos.length,
           (index) => Padding(
-            padding: EdgeInsets.only(
-              right: index != photos.length - 1 ? 16 : 0,
-            ),
-            child: Material(
-              borderRadius: const BorderRadius.all(Radius.circular(16)),
-              clipBehavior: Clip.antiAlias,
-              color: Theme.of(context).colorScheme.surfaceVariant,
-              child: Image.network(
-                photos[index].toString(),
-                fit: BoxFit.cover,
+              padding: EdgeInsets.only(
+                right: index != photos.length - 1 ? 16 : 0,
               ),
-            ),
-          ),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Theme.of(context).colorScheme.surfaceVariant,
+                  ),
+                  borderRadius: borderRadius,
+                ),
+                child: Material(
+                  borderRadius: borderRadius,
+                  clipBehavior: Clip.antiAlias,
+                  color: Colors.white,
+                  child: Image.network(
+                    photos[index].toString(),
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              )),
         ),
       ),
     );
