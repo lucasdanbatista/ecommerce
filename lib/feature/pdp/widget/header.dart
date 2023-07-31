@@ -16,8 +16,6 @@ class Header extends StatelessWidget {
         Text(
           product.name,
           style: Theme.of(context).textTheme.headlineMedium,
-          maxLines: 3,
-          overflow: TextOverflow.ellipsis,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 16),
