@@ -20,26 +20,27 @@ class PhotoSlider extends StatelessWidget {
         children: List.generate(
           photos.length,
           (index) => Padding(
-              padding: EdgeInsets.only(
-                right: index != photos.length - 1 ? 16 : 0,
+            padding: EdgeInsets.only(
+              right: index != photos.length - 1 ? 16 : 0,
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Theme.of(context).colorScheme.surfaceVariant,
+                ),
+                borderRadius: borderRadius,
               ),
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Theme.of(context).colorScheme.surfaceVariant,
-                  ),
-                  borderRadius: borderRadius,
+              child: Material(
+                borderRadius: borderRadius,
+                clipBehavior: Clip.antiAlias,
+                color: Colors.white,
+                child: Image.network(
+                  photos[index].toString(),
+                  fit: BoxFit.contain,
                 ),
-                child: Material(
-                  borderRadius: borderRadius,
-                  clipBehavior: Clip.antiAlias,
-                  color: Colors.white,
-                  child: Image.network(
-                    photos[index].toString(),
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              )),
+              ),
+            ),
+          ),
         ),
       ),
     );
