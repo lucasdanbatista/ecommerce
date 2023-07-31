@@ -9,3 +9,8 @@ server***. ⚠️
 ### Watch on YouTube:
 
 [![Watch the video](https://img.youtube.com/vi/Ky_gogzt_t8/maxresdefault.jpg)](https://youtu.be/Ky_gogzt_t8)
+
+
+### Download apk:
+
+https://github.com/lucasdanbatista/ecommerce/raw/main/out/android/ecommerce.apk
