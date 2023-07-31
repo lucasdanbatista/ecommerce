@@ -26,7 +26,7 @@ class ProductCard extends StatelessWidget {
               child: Material(
                 elevation: 0,
                 borderRadius: borderRadius,
-                color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.6),
+                color: Colors.white,
                 clipBehavior: Clip.antiAlias,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,8 +34,7 @@ class ProductCard extends StatelessWidget {
                     Expanded(
                       child: Image.network(
                         product.photos.first.toString(),
-                        fit: BoxFit.cover,
-                        width: MediaQuery.of(context).size.width,
+                        fit: BoxFit.contain,
                       ),
                     ),
                     Padding(
