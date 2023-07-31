@@ -5,7 +5,7 @@ import 'package:ecommerce/core/mapper/offer_mapper.dart';
 import 'package:ecommerce/core/mapper/product_mapper.dart';
 import 'package:ecommerce/core/mapper/seller_mapper.dart';
 import 'package:ecommerce/core/provider/remote_product_provider.dart';
-import 'package:ecommerce/core/repository/product_repository.dart';
+import 'package:ecommerce/core/repository/product_repository_impl.dart';
 import 'package:ecommerce/feature/catalog/catalog_module.dart';
 import 'package:ecommerce/feature/pdp/product_details_module.dart';
 import 'package:ecommerce/util/environment.dart';
