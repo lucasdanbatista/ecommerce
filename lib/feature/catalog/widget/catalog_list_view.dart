@@ -11,6 +11,7 @@ class CatalogListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      padding: const EdgeInsets.only(bottom: 72),
       child: Column(
         children: List.generate(
           catalogs.length,
