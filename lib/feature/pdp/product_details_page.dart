@@ -1,13 +1,11 @@
-import 'package:ecommerce/core/entity/offer.dart';
 import 'package:ecommerce/core/entity/product.dart';
 import 'package:ecommerce/feature/pdp/product_details_controller.dart';
 import 'package:ecommerce/feature/pdp/product_details_result.dart';
-import 'package:ecommerce/feature/pdp/widget/cash_offer_text.dart';
 import 'package:ecommerce/feature/pdp/widget/categories_label.dart';
-import 'package:ecommerce/feature/pdp/widget/credit_offer_text.dart';
+import 'package:ecommerce/feature/pdp/widget/header.dart';
 import 'package:ecommerce/feature/pdp/widget/photo_slider.dart';
+import 'package:ecommerce/feature/pdp/widget/product_info.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 class ProductDetailsPage extends StatelessWidget {
@@ -71,77 +69,9 @@ class ProductDetailsPage extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                product.name,
-                style: Theme.of(context).textTheme.headlineMedium,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 16,
-                  bottom: 4,
-                ),
-                child: CashOfferText(product.offers.whereType<CashOffer>().first),
-              ),
-              CreditOfferText(product.offers.whereType<CreditOffer>().first),
-              const Padding(padding: EdgeInsets.only(top: 12)),
-              Text.rich(
-                TextSpan(
-                  text: 'Vendido e entregue por ',
-                  children: [
-                    TextSpan(
-                      text: product.seller.name,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+          child: Header(product),
         ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 32, 16, 16),
-          child: Text(
-            'Informações do produto',
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-        ),
-        ExpansionTile(
-          title: const Text('Descrição'),
-          children: [
-            ListTile(
-              title: MarkdownBody(
-                data: product.description,
-              ),
-            ),
-          ],
-        ),
-        ExpansionTile(
-          title: const Text('Especificações técnicas'),
-          children: [
-            ListTile(
-              title: MarkdownBody(
-                data: product.techSpecs,
-              ),
-            )
-          ],
-        ),
-        ExpansionTile(
-          title: const Text('Dimensões'),
-          children: [
-            ListTile(
-              title: MarkdownBody(
-                data: product.dimensions,
-              ),
-            ),
-          ],
-        ),
+        ProductInfo(product),
       ],
     );
   }
