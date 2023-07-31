@@ -16,33 +16,41 @@ class ProductCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 6),
         child: Stack(
           children: [
-            Material(
-              elevation: 0,
-              borderRadius: borderRadius,
-              color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.6),
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Image.network(
-                      product.photos.first.toString(),
-                      fit: BoxFit.cover,
-                      width: MediaQuery.of(context).size.width,
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: borderRadius,
+                border: Border.all(
+                  color: Theme.of(context).colorScheme.surfaceVariant,
+                ),
+              ),
+              child: Material(
+                elevation: 0,
+                borderRadius: borderRadius,
+                color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(0.6),
+                clipBehavior: Clip.antiAlias,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Image.network(
+                        product.photos.first.toString(),
+                        fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: Text(
-                      product.name,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            fontWeight: FontWeight.w500,
-                          ),
+                    Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: Text(
+                        product.name,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 2,
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              fontWeight: FontWeight.w500,
+                            ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Material(
