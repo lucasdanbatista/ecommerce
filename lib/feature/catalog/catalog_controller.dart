@@ -17,8 +17,8 @@ abstract class CatalogControllerBase with Store {
   @action
   Future<void> fetch() async {
     try {
-      final catalog = await _repository.getCatalog();
-      result = SuccessCatalogResult(catalog);
+      final catalogs = await _repository.getCatalogs();
+      result = SuccessCatalogResult(catalogs);
     } catch (e) {
       result = FailureCatalogResult();
       rethrow;

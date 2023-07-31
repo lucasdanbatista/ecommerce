@@ -1,13 +1,13 @@
-import 'package:ecommerce/core/entity/product.dart';
+import 'package:ecommerce/core/entity/catalog.dart';
 
 abstract class CatalogResult {}
 
 class LoadingCatalogResult extends CatalogResult {}
 
 class SuccessCatalogResult extends CatalogResult {
-  final List<Product> catalog;
+  final List<Catalog> catalogs;
 
-  SuccessCatalogResult(this.catalog);
+  SuccessCatalogResult(this.catalogs);
 }
 
 class FailureCatalogResult extends CatalogResult {}
