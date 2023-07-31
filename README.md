@@ -6,4 +6,4 @@ Coding challenge for Mob4Pay tech interview.
 contact me on [contact@lucasbatista.me](mailto:contact@lucasbatista.me), then, I can provide a new
 server***. ⚠️
 
-https://youtube.com/shorts/Ky_gogzt_t8
+https://www.youtube.com/watch?v=Ky_gogzt_t8
